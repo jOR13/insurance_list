@@ -1,0 +1,24 @@
+<%= form_with url: "/insurance", method: :post do |form| %>
+  <%= form.label :zip, "ZIP Code:" %>
+  <%= form.text_field :zip %>
+  <%= form.submit "Insurance companies" %>
+
+  <%= form.submit "Insurance Brokers" %>
+<% end %>
+
+<table class="table  table is-striped">
+  <thead>
+    <tr>
+      <th title="Position">Company</th>
+      </tr>
+  </thead>
+      <% @list.each do |company| %>
+  <tbody>
+    <tr>
+      <td data-label="Company: "><%= company[0] %></td>
+    </tr>
+  </tbody>
+      <% end %>
+</table>
+
+
